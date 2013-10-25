@@ -16,7 +16,6 @@ class Graph
   def add_conection(node_origin, node_destination, cost)
     @g[node_origin.key] = node_origin if @g[node_origin.key].nil?
     @g[node_destination.key] = node_destination if @g[node_destination.key].nil?
-
-    @g[node_origin.key] = Edge.new(node_origin, node_destination, cost)
+    Edge.new(node_origin, node_destination, cost)
   end
 end
