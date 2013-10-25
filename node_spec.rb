@@ -1,4 +1,4 @@
-# require_relative '../../edge.rb'
+require_relative 'edge.rb'
 require_relative 'node.rb'
 
 describe Node do
