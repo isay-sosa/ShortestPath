@@ -3,7 +3,7 @@ class Dijkstra
     @start_node = start_node
     @end_node = end_node
     examin_neighbors_and_update_distance @start_node
-    print_route @end_node
+    get_route @end_node
   end
 
   private
@@ -42,9 +42,9 @@ class Dijkstra
     end
   end
 
-  def print_route(node)
+  def get_route(node)
     if !node.from.nil?
-      route = "#{print_route(node.from)} => #{node.key}"
+      route = "#{get_route(node.from)} => #{node.key}"
     else
       route = "#{@start_node.key}"
     end

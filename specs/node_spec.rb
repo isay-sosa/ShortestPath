@@ -41,7 +41,7 @@ describe Node do
       expect(@node.edges).to be_empty
       expect(node_b.edges).to be_empty
 
-      e = Edge.new @node, node_b, 10
+      Edge.new @node, node_b, 10
 
       expect(@node.edges.size).to be 1
       expect(node_b.edges.size).to be 1
