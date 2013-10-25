@@ -1,8 +1,9 @@
 require 'rake/testtask'
-require_relative 'node.rb'
+
 require_relative 'dijkstra.rb'
 require_relative 'graph.rb'
 require_relative 'edge.rb'
+require_relative 'node.rb'
 
 Rake::TestTask.new("test:all") do |t|
   t.libs = ["specs"]
