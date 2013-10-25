@@ -1,6 +1,4 @@
-require_relative 'graph.rb'
-require_relative 'edge.rb'
-require_relative 'node.rb'
+require_relative 'spec_helper'
 
 describe Graph do
   describe "#new" do

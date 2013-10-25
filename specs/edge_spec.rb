@@ -1,5 +1,4 @@
-require_relative 'edge.rb'
-require_relative 'node.rb'
+require_relative 'spec_helper'
 
 describe Edge do
   let(:node_a) { Node.new "A" }
