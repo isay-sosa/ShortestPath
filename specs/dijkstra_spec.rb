@@ -23,5 +23,11 @@ describe Dijkstra do
         expect( dijkstra.make_path(graph.g[1], graph.g[5]) ).to eql "1 => 3 => 6 => 5"
       end
     end
+
+    context "when start_node is node_5 and end_node is node_1" do
+      it "the path should be 5 => 6 => 1" do
+        expect( dijkstra.make_path(graph.g[5], graph.g[1]) ).to eql "5 => 6 => 1"
+      end
+    end
   end
 end
