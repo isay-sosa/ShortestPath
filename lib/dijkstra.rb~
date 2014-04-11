@@ -1,0 +1,40 @@
+class Dijkstra
+  def shortest_path(start_node, end_node)
+    iterator(start_node, end_node)
+    print_path(end_node)
+  end
+
+  private
+  def iterator(start_node, end_node)
+    return if start_node == end_node
+    start_node.is_visited = true
+    iterator(min_neighbor(start_node), end_node)
+  end
+
+  def min_neighbor(parent_node)
+    light_neighbor = nil
+    parent_node.neighbors.each do |con|
+      if !con.node_b.visited?
+        sum_neighbor_value(con)
+        light_neighbor = con.node_b if !light_neighbor || light_neighbor.value > con.node_b.value
+      end
+    end
+    light_neighbor
+  end
+
+  def sum_neighbor_value(connection)
+    sum = connection.node_a.value + connection.weight
+    if !connection.node_b.procedence || connection.node_b.value > sum
+      connection.node_b.value = sum
+      connection.node_b.procedence = connection.node_a
+    end
+  end
+
+  def print_path(node)
+    if node.procedence
+      "#{print_path(node.procedence)} => #{node.key}"
+    else
+      "#{node.key}"
+    end
+  end
+end
